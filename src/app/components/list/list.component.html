@@ -1,0 +1,12 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">Products</div>
+    <div class="panel-body">
+        <table class="table">
+            <ul class="list-group">
+                <span *ngFor="let product of service.list">
+                    <li class="list-group-item" (click)="populateForm(product)">{{product.name}}<span class="pull-right">{{product.price}}</span></li>
+                </span>
+            </ul>
+          </table>
+    </div>
+</div>

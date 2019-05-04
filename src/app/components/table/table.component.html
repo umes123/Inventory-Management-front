@@ -1,0 +1,36 @@
+<ul class="list-group">
+    <li class="list-group-item">Product Count-{{service.getProductCount()}}</li>
+</ul>
+<div class="panel panel-primary">
+    <div class="panel-heading">Product Details<span class="pull-right">{{service.formData.name}}</span></div>
+    <div class="panel-body">
+        <form #form="ngForm">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="service.formData.name" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+            <label>Price:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                    <input type="text" class="form-control" name="price"  [(ngModel)]="service.formData.price" placeholder="Enter Price">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Rating</div>
+                    <div class="panel-body">
+                        <input type="number" class="form-control" [(ngModel)]="service.formData.rating" name="rating" placeholder="Enter Rating">
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="_id" [(ngModel)]="service.formData._id">
+        </form> 
+    </div>
+    <div class="panel-footer">
+        <button class="btn btn-primary" (click)="add(form)">Add</button>
+        <button class="btn btn-success" (click)="update(form)">Save</button>
+        <button class="btn btn-danger" (click)="delete(form)">Delete</button>
+        <button class="btn btn-info" (click)="reset()">Cancel</button>
+    </div>
+</div>
