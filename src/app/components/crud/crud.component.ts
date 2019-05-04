@@ -15,7 +15,7 @@ export class CrudComponent implements OnInit {
      //this._http.get('http://localhost:8080/crudemp').subscribe(res =>{this.result=res})
      
   }
-  name =this.service.currentuser.name;
+  //name =this.service.currentuser.name;
 
   onSubmit(form){
     console.log(form.value)
